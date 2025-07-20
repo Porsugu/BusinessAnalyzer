@@ -1,4 +1,4 @@
-# 📊 Smart Sales Data Analyzer with Local LLM (Ollama)
+# 📊 Intelligent Business Data Analytics Platform (Ollama)
 
 This project is a **Streamlit web app** that lets you upload **CSV or Excel sales data**, then uses a **local LLM (via Ollama)** to:
 
