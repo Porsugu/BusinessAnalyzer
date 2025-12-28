@@ -1,147 +1,63 @@
-# 📊 Intelligent Business Data Analytics Platform (Ollama)
+# 🚀 Enterprise Sales AI Analyst (Local LLM)
 
-This project is a **Streamlit web app** that lets you upload **CSV or Excel sales data**, then uses a **local LLM (via Ollama)** to:
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Ollama](https://img.shields.io/badge/AI-Ollama%20Local-black?style=for-the-badge)
+![Plotly](https://img.shields.io/badge/Visualization-Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 
-✅ **Auto-detect column meanings** (e.g. Date, Product, Sales Amount)  
-✅ **Auto-generate meaningful charts** (distributions, time-series trends)  
-✅ **Provide AI-driven business insights & improvement suggestions**  
-
-It runs **entirely locally**, so your data stays private. No cloud API required.
-
----
-
-## 🚀 Features
-
-- 🖱 **Upload CSV or Excel** files for analysis  
-- 🧠 **LLM auto-interprets columns** (e.g. detects which is date, sales amount, etc.)  
-- 📊 **Auto-generated visualizations**:
-  - Numeric column distributions
-  - Sales trends over time (if date column detected)
-- 💡 **Business insights**: LLM highlights weak-performing products/months and gives suggestions  
-- 🏠 **Runs locally with Ollama** → No data leaves your machine  
+An intelligent, privacy-first analytics platform that transforms raw sales data into actionable business strategies. Powered by **Local LLMs (Ollama/Llama3)**, this tool simulates the role of a Chief Revenue Officer (CRO), offering deep customer segmentation (RFM), retention metrics, and conversational insights without sending data to the cloud.
 
 ---
 
-## 🛠 Requirements
+## 🌟 Key Features
 
-- **Python 3.10+**
-- **[Ollama](https://ollama.com/) installed** and a local model (e.g. `llama3` or `mistral`)
+### 1. 🧠 Intelligent Data Mapping (Auto-Schema)
+- Uses LLM to **automatically infer** complex column roles (e.g., distinguishing between `Transaction Date`, `Customer ID`, and `Revenue`).
+- Robust error handling with JSON cleaning logic ensures stability even with verbose LLM outputs.
 
-Python dependencies:
-```txt
-streamlit
-pandas
-plotly
-matplotlib
-requests
-openpyxl   # for Excel support
-```
+### 2. 📈 Executive KPI Dashboard
+- Real-time calculation of critical metrics:
+  - **AOV (Average Order Value)**
+  - **UPT (Units Per Transaction / Basket Size)**
+  - **MoM Growth (Month-over-Month)**
+  - **Repeat Purchase Rate** (Loyalty metric)
+
+### 3. 👥 RFM Customer Segmentation (Advanced)
+- Implements the **Recency, Frequency, Monetary (RFM)** model to classify customers into actionable cohorts:
+  - 🏆 **Champions (VIPs)**: High value, recent buyers.
+  - 💎 **Loyal Customers**: Frequent buyers.
+  - 💤 **Lost/Churned**: High value but inactive.
+- **Strategic Visualization**: Scatter plots and distribution charts to identify revenue concentration.
+
+### 4. 💬 Chat with Your Data
+- A built-in **Conversational Interface** allows non-technical users to query data naturally.
+- *Example: "Why did sales drop in Q4?"* or *"Who is our most valuable customer?"*
+
+### 5. 🔒 100% Local & Private
+- Runs entirely on your machine using **Ollama**.
+- Zero data leakage—perfect for sensitive financial datasets.
 
 ---
 
-## 🔧 Setup
+## 🛠 Tech Stack
 
-1️⃣ **Clone the repo**
+- **Frontend/UI**: Streamlit
+- **Data Processing**: Pandas, NumPy
+- **Visualization**: Plotly Express (Interactive Charts)
+- **AI/Inference**: Ollama (Llama 3 / Mistral) via `requests`
+- **Architecture**: Python modular design with Session State management for scalability.
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+1. **Python 3.10+** installed.
+2. **[Ollama](https://ollama.com/)** installed and running.
+
+### Installation
+
+1️⃣ **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/sales-data-analyzer.git
-cd sales-data-analyzer
-```
-
-2️⃣ **Install Python dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-3️⃣ **Install & run Ollama**
-- [Download Ollama](https://ollama.com/download)
-- Pull a model:
-  ```bash
-  ollama pull llama3
-  ```
-- Start the Ollama server:
-  ```bash
-  ollama serve
-  ```
-  It will run at `http://localhost:11434`.
-
-4️⃣ **Run the Streamlit app**
-```bash
-streamlit run sales_analysis_app.py
-```
-
-5️⃣ **Open browser**
-- Visit `http://localhost:8501`
-- Upload a CSV/Excel file and start exploring your sales data!
-
----
-
-## 📂 Project Structure
-
-```
-sales-data-analyzer/
-│
-├── sales_analysis_app.py   # Main Streamlit app
-├── requirements.txt        # Python dependencies
-└── README.md               # Project documentation
-```
-
----
-
-## 🖼 Example Workflow
-
-1. **Upload a file (CSV/Excel)**  
-2. The LLM infers column meanings:  
-   ```json
-   {
-     "Date": "Transaction date",
-     "Product": "Product name",
-     "Amount": "Total sales amount"
-   }
-   ```
-3. Charts are generated:
-   - Sales distribution
-   - Time series trends
-4. AI provides business insights:
-   - Which products/regions/months are underperforming
-   - Suggestions for improvements
-
-*(You can later add screenshots here)*
-
----
-
-## ⚡ Future Improvements
-
-- 🗺 **Regional sales heatmap** (if region column exists)  
-- 📈 **LLM-driven dynamic chart selection**  
-- 📄 **Export AI report as PDF**  
-- 🐳 **Docker support for easy deployment**  
-- 🔗 **Optional cloud LLM (OpenAI) for higher accuracy**
-
----
-
-## 💻 Tech Stack
-
-- **[Streamlit](https://streamlit.io/)** → interactive UI  
-- **[Pandas](https://pandas.pydata.org/)** → CSV/Excel processing  
-- **[Plotly](https://plotly.com/python/)** → interactive charts  
-- **[Ollama](https://ollama.com/)** → local LLM for reasoning & insights  
-
----
-
-## 📝 License
-
-MIT License © 2025 Your Name
-
----
-
-## 🤝 Contributing
-
-Pull requests and suggestions are welcome!  
-You can also open an **Issue** if you have feature requests or bug reports.
-
----
-
-## 🙌 Acknowledgements
-
-- Thanks to [Ollama](https://ollama.com/) for making local LLMs easy to run  
-- Inspired by business analytics workflows for SMBs
+git clone [https://github.com/yourusername/sales-ai-analyst.git](https://github.com/yourusername/sales-ai-analyst.git)
+cd sales-ai-analyst
